@@ -14,6 +14,30 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "styleguard",
+    title: "StyleGuard",
+    year: "2026",
+    image: "/images/styleguard-1.png",
+    description:
+      "Brand consistency checks for AI image generation: a vision model scores every image against brand rules, with drift alerts in Slack.",
+    longDescription:
+      "StyleGuard generates images for a brand and checks that each one actually fits the brand rules. The API is built with Hono and TypeScript, backed by PostgreSQL on Neon through Prisma, with Zod validation on every input. Generation runs through a job queue in Postgres (FOR UPDATE SKIP LOCKED) with retries, timeouts, resumable stages and idempotency keys, so a failed step never produces a duplicate image. Images are made with FLUX models on Cloudflare Workers AI and stored in Cloudflare R2. Brands are versioned and immutable: editing a brand creates a new version, and old images keep pointing to the rules they were made with. Every image is scored by a vision model (Gemma 4 by default) that returns a score, a palette match and reasons; if the reply is invalid the check is marked unavailable instead of guessing a score. To choose the judge I hand-labelled 42 images and compared two models: Gemma 4 agreed with my labels 93% of the time and caught every off-brand image, Llama 4 Scout reached 79%. A GitHub Action reruns this eval on every pull request and posts the results as a comment. A rolling average of scores per brand and model detects quality drift and sends one Slack message when it drops below the threshold and one when it recovers. The UI was built with Lovable, the API runs on Render with a daily generation cap and a per-IP rate limit. The API is on a free instance, so the first load can take up to a minute.",
+    demoUrl: "https://styleguardtest.lovable.app",
+    videoUrl:
+      "https://drive.google.com/file/d/1B8spUQTbxHIUA6xlgq5wSKP4RpIQhCd1/view?usp=sharing",
+    tags: [
+      "TypeScript",
+      "Hono",
+      "PostgreSQL",
+      "Prisma",
+      "Zod",
+      "Cloudflare R2",
+      "Workers AI",
+      "Vision LLM",
+      "GitHub Actions",
+    ],
+  },
+  {
     slug: "applytrack",
     title: "ApplyTrack",
     year: "2026-present",
