@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2">
         <div>
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-            Fullstack developer
+            AI &amp; Full Stack Engineer
           </p>
 
           <h1 className="font-display text-5xl leading-tight text-ink md:text-6xl">
@@ -14,9 +14,9 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            I build cross-platform apps with React Native and Node.js, and bring
-            a research background in data-driven modeling to how I approach
-            product problems.
+            I build AI-powered and cross-platform products, from LLM pipelines
+            and RAG to mobile and web apps, with a data-first,
+            evaluation-driven approach.
           </p>
 
           <a

@@ -4,7 +4,7 @@ import { skillGroups } from "@/data/skills";
 export default function Skills() {
   return (
     <Section id="skills" title="Skills">
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group) => (
           <div
             key={group.category}
